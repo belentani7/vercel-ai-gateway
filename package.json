@@ -1,0 +1,18 @@
+{
+  "name": "vercel-ai-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "text": "npx tsx index.ts",
+    "video": "npx tsx video.ts"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "@ai-sdk/gateway": "^4.0.80",
+    "ai": "^7.0.99",
+    "dotenv": "^17.4.2",
+    "tsx": "^4.23.13"
+  }
+}
