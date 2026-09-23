@@ -19,3 +19,4 @@ build/
 *.p12
 .DS_Store
 thumbs.db
+.env.local
