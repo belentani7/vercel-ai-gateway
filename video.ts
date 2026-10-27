@@ -1,7 +1,7 @@
 import 'dotenv/config';
-import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { experimental_generateVideo as generateVideo } from 'ai';
+import { saveVideoWithoutOverwrite } from './video-output.mjs';
 
 const help = `Vercel AI Gateway · Video CLI (may incur usage charges)
 Usage: npm run video -- "Describe a scene"
@@ -27,10 +27,10 @@ async function main() {
   }
 
   const output = resolve(process.cwd(), process.env.AI_GATEWAY_VIDEO_OUTPUT || 'generated-video.mp4');
-  const result = await generateVideo({ model, prompt });
-  const data = result.videos?.[0]?.uint8Array;
-  if (!data?.length) throw new Error('The selected video model returned no video.');
-  writeFileSync(output, data, { flag: 'wx' });
+  await saveVideoWithoutOverwrite(output, async () => {
+    const result = await generateVideo({ model, prompt });
+    return result.videos?.[0]?.uint8Array;
+  });
   console.log('Video saved:', output);
 }
 
