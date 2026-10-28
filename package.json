@@ -10,7 +10,7 @@
   "keywords": [],
   "type": "commonjs",
   "dependencies": {
-    "@ai-sdk/gateway": "^4.0.80",
+    "@ai-sdk/gateway": "^4.0.126",
     "ai": "^7.0.99",
     "dotenv": "^17.4.2",
     "tsx": "^4.23.13"
