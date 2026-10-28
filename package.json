@@ -11,7 +11,7 @@
   "type": "commonjs",
   "dependencies": {
     "@ai-sdk/gateway": "^4.0.80",
-    "ai": "^7.0.99",
+    "ai": "^7.0.153",
     "dotenv": "^17.4.2",
     "tsx": "^4.23.13"
   }
